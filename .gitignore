@@ -1,0 +1,118 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Serverless directories
+.serverless/
+
+# .vscode local config
+.vscode
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# Mac OS system files
+.DS_Store
+
+# VIM tmp files
+*.sw*
+
+# Turbo system files
+.turbo
+
+# Compiled modules
+/lib
+/build
+/dist
+
+*storybook.log
+*/storybook-static
+coverage
+*/coverage
+
+.venv
+_venv
+venv
+
+# aider
+.aider.chat.history.md
+.aider.input.history
+.aider*
+.env.aider
+
+#instructive docs
+instructive-docs
+
+#cursor
+.cursor
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+*.pem
+
+# vercel
+.vercel
+
+# sanity
+.sanity
