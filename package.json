@@ -22,7 +22,7 @@
     "sanity:deploy": "pnpx sanity deploy",
     "sanity:undeploy": "pnpx sanity undeploy"
   },
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.10.0",
   "engines": {
     "node": "^20 || ^21"
   },
@@ -32,6 +32,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@manypkg/cli": "^0.24.0",
+    "@sanity/document-internationalization": "^3.3.1",
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
     "@solana/ms-tools-analytics": "link:../solana-ms-tools/packages/analytics",
@@ -46,6 +47,7 @@
     "@storybook/experimental-nextjs-vite": "8.6.12",
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "@t3-oss/env-nextjs": "^0.13.4",
     "@tailwindcss/postcss": "^4.1.6",
     "@testing-library/dom": "^10.4.0",
     "@types/node": "^22.15.17",
@@ -84,7 +86,8 @@
     "tailwindcss": "^4.1.6",
     "turbo": "^2.5.3",
     "typescript": "^5",
-    "vitest": "^3.1.3"
+    "vitest": "^3.1.3",
+    "zod": "^3.24.4"
   },
   "publishConfig": {
     "access": "restricted"
@@ -95,7 +98,6 @@
     ]
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.13.4",
-    "zod": "^3.24.4"
+    "next-intl": "^4.1.0"
   }
 }

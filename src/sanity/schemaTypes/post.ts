@@ -1,10 +1,12 @@
 import { defineField, defineType } from 'sanity'
+import { LANGUAGE_FIELD } from '../../constants/language'
 
-export const postType = defineType({
+export const post = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
   fields: [
+    defineField(LANGUAGE_FIELD),
     defineField({
       name: 'title',
       type: 'string',

@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { DEFAULT_METADATA } from '@/constants/metadata'
-import { client } from '@/sanity/lib/client'
+import { LocaleParam } from '@/types/language'
+import { env } from '../../../env.mjs'
+import { sanityFetch } from './live'
 import { pageSeoQuery } from './queries/page'
 import { ISanityPage, TSanityCustomImage, TSanityOpenGraph, TSanitySeo } from './types'
 
@@ -22,14 +24,26 @@ export const resolveImage = (image?: TSanityCustomImage) => {
   return image?.asset?.url ?? ''
 }
 
-export async function getSeoData(slug: string = ''): Promise<Metadata> {
-  const { seo } = await client.fetch<ISanityPage>(pageSeoQuery, { slug })
-
+export async function getPageSeoData({
+  pathname = null,
+  locale,
+}: {
+  pathname: string | null
+  locale: LocaleParam
+}): Promise<Metadata> {
+  const { data } = await sanityFetch({
+    query: pageSeoQuery,
+    params: { pathname, language: locale },
+  })
+  const { seo, title } = (data?.[0] || {}) as ISanityPage
   const { metaDescription, metaTitle, twitter, seoKeywords } = (seo || {}) as TSanitySeo
 
   const openGraph = seo?.openGraph ? getOpenGraph(seo?.openGraph) : undefined
 
-  const url = (process.env.NEXT_PUBLIC_APP_URL ?? '') + (slug?.startsWith('/') ? slug : `/${slug}`)
+  const url =
+    (env.NEXT_PUBLIC_APP_URL ?? '') +
+    `/${locale}` +
+    (pathname == null ? '' : pathname?.startsWith('/') ? pathname : `/${pathname}`)
 
   return {
     ...DEFAULT_METADATA,
@@ -43,7 +57,7 @@ export async function getSeoData(slug: string = ''): Promise<Metadata> {
       canonical: url || '',
     },
     keywords: seoKeywords,
-    title: metaTitle || DEFAULT_METADATA.title,
+    title: metaTitle || title || DEFAULT_METADATA.title,
     description: metaDescription || DEFAULT_METADATA.description,
   }
 }

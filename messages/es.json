@@ -1,0 +1,15 @@
+{
+  "homePage": {
+    "posts": {
+      "title": "Publicaciones"
+    }
+  },
+  "utils": {
+    "back": "Regresar a la página de inicio",
+    "loading": "Cargando",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información"
+  }
+}

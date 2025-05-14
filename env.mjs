@@ -7,6 +7,8 @@ export const env = createEnv({
    * Will throw if you access these variables on the client.
    */
   server: {
+    NODE_ENV: z.enum(["development", "production", "test"]),
+    SANITY_VIEWER_TOKEN: z.string().optional(),
   },
   /*
    * Environment variables available on the client (and server).
@@ -16,6 +18,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
     NEXT_PUBLIC_SANITY_DATASET: z.string(),
+    NEXT_PUBLIC_APP_URL: z.string(),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -26,5 +29,8 @@ export const env = createEnv({
   runtimeEnv: {
     NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NODE_ENV: process.env.NODE_ENV,
+    SANITY_VIEWER_TOKEN: process.env.SANITY_VIEWER_TOKEN,
   },
 });

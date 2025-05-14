@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { LANGUAGE_FIELD } from '@/constants/language'
 
 export const page = defineType({
   type: 'document',
@@ -6,41 +7,46 @@ export const page = defineType({
   name: 'page',
   groups: [
     {
-      title: 'SEO',
-      name: 'seo',
-    },
-    {
       title: 'Content',
       name: 'content',
     },
+    {
+      title: 'SEO',
+      name: 'seo',
+    },
   ],
   fields: [
+    defineField(LANGUAGE_FIELD),
+    defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      group: 'content',
+      validation: (rule) => rule.max(50).warning('Shorter titles are usually better'),
+    }),
+    defineField({
+      name: 'pathname',
+      title: 'Pathname',
+      type: 'string',
+      group: 'content',
+      validation: (rule) => rule.max(50).warning('Shorter pathnames are usually better'),
+    }),
     defineField({
       title: 'SEO',
       name: 'seo',
       type: 'seoMetaFields',
       group: 'seo',
     }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      group: 'content',
-    }),
   ],
   preview: {
     select: {
-      metaTitle: 'metaTitle',
+      metaTitle: 'seo.metaTitle',
+      title: 'title',
     },
-    prepare(selection: { metaTitle?: string }) {
-      const { metaTitle } = selection
-
+    prepare(selection: { title?: string; metaTitle?: string }) {
+      const { title, metaTitle } = selection
       return {
-        title: metaTitle || 'SEO',
+        title: title || metaTitle || 'Untitled Page',
       }
     },
   },
