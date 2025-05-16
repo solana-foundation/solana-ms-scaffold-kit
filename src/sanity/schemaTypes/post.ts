@@ -1,5 +1,5 @@
+import { LANGUAGE_FIELD } from '@solana/ms-tools-integrations'
 import { defineField, defineType } from 'sanity'
-import { LANGUAGE_FIELD } from '../../constants/language'
 
 export const post = defineType({
   name: 'post',
