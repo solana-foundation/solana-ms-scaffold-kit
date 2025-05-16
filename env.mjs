@@ -1,5 +1,5 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { createEnv } from '@t3-oss/env-nextjs';
+import { z } from 'zod';
 
 export const env = createEnv({
   /*
@@ -7,7 +7,7 @@ export const env = createEnv({
    * Will throw if you access these variables on the client.
    */
   server: {
-    NODE_ENV: z.enum(["development", "production", "test"]),
+    NODE_ENV: z.enum(['development', 'production', 'test']),
     SANITY_VIEWER_TOKEN: z.string().optional(),
   },
   /*
@@ -19,6 +19,7 @@ export const env = createEnv({
     NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
     NEXT_PUBLIC_SANITY_DATASET: z.string(),
     NEXT_PUBLIC_APP_URL: z.string(),
+    DEBUG: z.string().optional(),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -31,6 +32,7 @@ export const env = createEnv({
     NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NODE_ENV: process.env.NODE_ENV,
+    DEBUG: process.env.DEBUG,
     SANITY_VIEWER_TOKEN: process.env.SANITY_VIEWER_TOKEN,
   },
 });

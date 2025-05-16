@@ -10,6 +10,7 @@
     "error": "Error",
     "success": "Éxito",
     "warning": "Advertencia",
-    "info": "Información"
+    "info": "Información",
+    "language_selection": "Selección de idioma"
   }
 }

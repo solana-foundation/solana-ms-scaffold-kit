@@ -1,15 +1,25 @@
+import { Metadata } from 'next'
 import { MoveLeft } from 'lucide-react'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Post } from '@/components/Post'
 import { Link } from '@/i18n/navigation'
+import { postSeoQuery } from '@/sanity/lib/queries/post'
+import { ParamsWithLocale } from '@/types/language'
 import { TParams } from '@/types/routing'
 import { getGenerateMetadata } from '@/utils/page'
 
 export { generateStaticParams } from '@/utils/page'
 
-export const generateMetadata = getGenerateMetadata<{ slug: string }>(
-  ({ slug }: { slug: string }) => 'post/' + slug
-)
+export async function generateMetadata<
+  T extends object,
+  P extends ParamsWithLocale & { slug: string | null } = ParamsWithLocale & {
+    slug: string | null
+  } & T,
+>({ params }: { params: P }): Promise<Metadata> {
+  const metadataGenerator = await getGenerateMetadata<P>(postSeoQuery, ({ slug }) => 'post/' + slug)
+
+  return await metadataGenerator({ params })
+}
 
 interface IPostPageProps {
   params: TParams<{ slug: string }>

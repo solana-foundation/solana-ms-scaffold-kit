@@ -1,8 +1,9 @@
 'use client'
 
 import React, { useCallback } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@solana/ms-tools-ui'
+import { useTranslations } from 'next-intl'
 
 export interface Language {
   id: string
@@ -18,7 +19,7 @@ interface LanguageSelectProps {
 
 export const LanguageSelect = ({ languages, locale, onChange }: LanguageSelectProps) => {
   const router = useRouter()
-  const pathname = usePathname()
+  const t = useTranslations('utils')
 
   const handleChange = useCallback(
     (value: string) => {
@@ -28,13 +29,13 @@ export const LanguageSelect = ({ languages, locale, onChange }: LanguageSelectPr
 
       router.push(`/${value}`)
     },
-    [pathname, router, onChange]
+    [router, onChange]
   )
 
   return (
-    <Select value={locale} onValueChange={handleChange}>
+    <Select name="language-select" value={locale} onValueChange={handleChange}>
       <SelectTrigger>
-        <SelectValue placeholder="Select a language" />
+        <SelectValue placeholder={t('language_selection')} />
       </SelectTrigger>
       <SelectContent>
         {languages.map((language) => (

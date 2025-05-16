@@ -1,19 +1,11 @@
 import Image from 'next/image'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { defineQuery, PortableText, type SanityDocument } from 'next-sanity'
+import { PortableText } from 'next-sanity'
 import { urlFor } from '@/sanity/lib/image'
 import { sanityFetch } from '@/sanity/lib/live'
+import { postQuery } from '@/sanity/lib/queries/post'
 import { ParamsWithLocale } from '@/types/language'
-
-const POST_QUERY = defineQuery(`*[
-  _type == "post" && language == $language && $slug == slug.current
-][0]{
-_id,
-title,
-publishedAt,
-image,
-body
-}`)
+import { log } from '@/utils/log'
 
 export interface IPostPageProps extends ParamsWithLocale {
   slug: string
@@ -28,9 +20,11 @@ export async function Post({ locale, slug }: IPostPageProps) {
   const t = await getTranslations('utils')
 
   const { data: post } = await sanityFetch({
-    query: POST_QUERY,
+    query: postQuery,
     params: { language: locale, slug },
   })
+
+  log('post', post)
 
   if (!post) return <p>{t('loading')}...</p>
 

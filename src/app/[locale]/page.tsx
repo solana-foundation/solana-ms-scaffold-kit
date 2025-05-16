@@ -1,10 +1,13 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import { PostsList } from '@/components/PostsList'
 import { sanityFetch } from '@/sanity/lib/live'
 import { pageQuery } from '@/sanity/lib/queries/page'
 import { TParams } from '@/types/routing'
+import { generatePageMetadata } from '@/utils/page'
 
-export { generateStaticParams } from '@/utils/page'
+export { generatePageMetadata, generateStaticParams } from '@/utils/page'
+
+export const generateMetadata = generatePageMetadata
 
 interface IHomePageProps {
   params: TParams
@@ -16,7 +19,6 @@ export default async function HomePage({ params }: IHomePageProps) {
   // Enable static rendering
   setRequestLocale(locale)
 
-  const t = await getTranslations('homePage')
   const { data = {} } = await sanityFetch({
     query: pageQuery,
     params: { language: locale, pathname: null },
