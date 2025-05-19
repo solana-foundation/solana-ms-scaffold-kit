@@ -1,0 +1,53 @@
+import { ReactNode } from 'react'
+import Head from 'next/head'
+import { TSanitySeo } from '@solana/ms-tools-integrations'
+import { DEFAULT_JSON_LD } from '@/constants/metadata'
+
+export function mapSanityMetaTags(metaTags: TSanitySeo['additionalMetaTags'] = []): ReactNode[] {
+  return metaTags
+    .flatMap((tag, index) => {
+      if (tag._type !== 'metaTag' || !tag.metaAttributes) return null
+
+      return tag.metaAttributes.map((attr, i) => {
+        const content =
+          attr.attributeType === 'image'
+            ? attr.attributeValueImage?.asset?.url
+            : attr.attributeValueString
+
+        if (!attr.attributeKey || !content) return null
+
+        return <meta key={`${index}-${i}`} name={attr.attributeKey} content={content} />
+      })
+    })
+    .filter(Boolean) as ReactNode[]
+}
+
+export function CustomHead({
+  title,
+  description,
+  seoKeywords,
+  additionalMetaTags,
+}: {
+  title?: string
+  description?: string
+  seoKeywords?: string[]
+  nofollowAttributes?: boolean
+  additionalMetaTags?: TSanitySeo['additionalMetaTags']
+}) {
+  return (
+    <Head>
+      {seoKeywords?.length && <meta name="keywords" content={seoKeywords.join(', ')} />}
+      {mapSanityMetaTags(additionalMetaTags)}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            ...DEFAULT_JSON_LD,
+            name: title,
+            description: description,
+          }),
+        }}
+      />
+    </Head>
+  )
+}

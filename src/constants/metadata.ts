@@ -1,3 +1,5 @@
+import { env } from '@/../env.mjs'
+
 export const DEFAULT_METADATA = {
   title: {
     template: '%s | Solana microsite scaffold kit',
@@ -13,4 +15,26 @@ export const DEFAULT_METADATA = {
       url: '/favicon.ico',
     },
   },
+}
+
+export const APP_URL = env.NEXT_PUBLIC_APP_URL
+
+export const DEFAULT_JSON_LD = {
+  __html: JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: APP_URL,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Your Organization Name',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${APP_URL}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPageElement',
+      url: APP_URL,
+    },
+  }),
 }

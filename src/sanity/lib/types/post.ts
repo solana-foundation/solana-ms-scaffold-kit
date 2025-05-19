@@ -1,6 +1,6 @@
+import { TSanitySeo } from '@solana/ms-tools-integrations'
 import { SanityDocument } from 'next-sanity'
 import { Image, Slug } from 'sanity'
-import { TSanitySeo } from './seo'
 
 export interface ISanityPost extends SanityDocument {
   _type: 'post'

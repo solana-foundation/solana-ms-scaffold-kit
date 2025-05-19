@@ -1,7 +1,7 @@
-import { Metadata } from 'next'
 import { LANGUAGES } from '@/constants/language'
 import { getSeoData } from '@/sanity/lib/getSeoData'
 import { pageSeoQuery } from '@/sanity/lib/queries/page'
+import { TSanityPageMeta } from '@/sanity/lib/types'
 import { ParamsWithLocale } from '@/types/language'
 
 /**
@@ -26,16 +26,16 @@ export async function generateStaticParams(): Promise<
  * @template P - The parameter type, which includes a locale parameter.
  * @param query - A string query used to fetch SEO data.
  * @param getPathname - A function that takes the parameters and returns the pathname as a string or null.
- * @returns A promise that resolves to a Metadata object.
+ * @returns A promise that resolves to a page Metadata object.
  */
 export async function getGenerateMetadata<
   T extends object,
-  P extends ParamsWithLocale = ParamsWithLocale & T,
+  P extends ParamsWithLocale & T = ParamsWithLocale & T,
 >(
   query: string,
   getPathname: (params: P) => string | null
-): Promise<({ params }: { params: P }) => Promise<Metadata>> {
-  return async ({ params }: { params: P }): Promise<Metadata> => {
+): Promise<({ params }: { params: P }) => Promise<TSanityPageMeta>> {
+  return async ({ params }: { params: P }): Promise<TSanityPageMeta> => {
     const paramsRes = await params
     const pathname = getPathname(paramsRes)
     if (!pathname && pathname !== null) {
@@ -59,7 +59,7 @@ export async function generatePageMetadata<
   P extends ParamsWithLocale & { pathname: string | null } = ParamsWithLocale & {
     pathname: string | null
   } & T,
->({ params }: { params: P }): Promise<Metadata> {
+>({ params }: { params: P }): Promise<TSanityPageMeta> {
   const metadataGenerator = await getGenerateMetadata<P>(
     pageSeoQuery,
     ({ pathname }) => pathname || null

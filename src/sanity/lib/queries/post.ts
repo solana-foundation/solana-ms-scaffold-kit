@@ -1,5 +1,5 @@
+import { seo } from '@solana/ms-tools-integrations'
 import { groq } from 'next-sanity'
-import { seo } from './seo'
 
 export const postQuery = groq`*[
   _type == "post" && language == $language && $slug == slug.current
