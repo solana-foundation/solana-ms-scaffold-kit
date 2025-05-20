@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next'
-import { APP_URL } from '@/constants/metadata'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +7,5 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/studio/',
     },
-    sitemap: APP_URL,
   }
 }
