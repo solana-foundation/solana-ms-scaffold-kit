@@ -16,9 +16,10 @@ export function DraftModeToggle({ isEnabled }: IDraftModeToggleProps) {
   const [isHidden, setIsHidden] = useState(false)
 
   const toggle = () =>
-    startTransition(async () => {
-      await toggleDraftMode()
-      router.refresh()
+    startTransition(() => {
+      toggleDraftMode().then(() => {
+        router.refresh()
+      })
     })
 
   const hidePanel = () => {

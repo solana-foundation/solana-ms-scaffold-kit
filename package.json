@@ -22,7 +22,7 @@
     "sanity:deploy": "pnpx sanity deploy",
     "sanity:undeploy": "pnpx sanity undeploy"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0",
   "engines": {
     "node": "^20 || ^21"
   },
@@ -40,7 +40,6 @@
     "@solana/ms-tools-integrations": "link:../solana-ms-tools/packages/integrations",
     "@solana/ms-tools-ui": "link:../solana-ms-tools/packages/ui",
     "@storybook/addon-essentials": "^8.6.12",
-    "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/addon-themes": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
     "@storybook/experimental-addon-test": "^8.6.12",
@@ -66,8 +65,11 @@
     "eslint-config-next": "15.3.2",
     "eslint-plugin-storybook": "^0.12.0",
     "lucide-react": "^0.509.0",
+    "msw": "^2.8.4",
+    "msw-storybook-addon": "^2.0.4",
     "next": "15.3.2",
     "next-intl": "^4.1.0",
+    "next-router-mock": "^1.0.2",
     "next-sanity": "9",
     "next-sanity-image": "^6.1.1",
     "playwright": "^1.52.0",
@@ -110,5 +112,10 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-testing-library": "^7.1.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

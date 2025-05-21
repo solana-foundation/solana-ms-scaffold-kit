@@ -9,6 +9,9 @@ const dirname =
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
 export default defineConfig({
   test: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
     workspace: [
       {
         extends: true,
@@ -28,6 +31,20 @@ export default defineConfig({
           setupFiles: ['.storybook/vitest.setup.ts'],
         },
       },
+      {
+        extends: true,
+        test: {
+          name: 'app',
+          globals: true,
+          environment: 'jsdom',
+          include: ['src/**/*.test.{ts,tsx}'],
+          exclude: ['**/node_modules/**', '**/.storybook/**', '**/*.stories.{ts,tsx}'],
+        },
+      },
     ],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+    },
   },
 })

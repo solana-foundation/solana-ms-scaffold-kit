@@ -32,7 +32,7 @@
     "./*.config.js",
     "./*.config.mjs",
     "./*.config.ts",
-    "./.storybook/*.ts",
+    "./.storybook/**/*.ts",
     "dist/types/**/*.ts"
   ],
   "exclude": [

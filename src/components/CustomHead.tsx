@@ -3,6 +3,22 @@ import Head from 'next/head'
 import { TSanitySeo } from '@solana/ms-tools-integrations'
 import { DEFAULT_JSON_LD } from '@/constants/metadata'
 
+/**
+ * Maps Sanity CMS meta tags to React meta elements
+ * @param {TSanitySeo['additionalMetaTags']} metaTags - Array of meta tag objects from Sanity CMS
+ * @returns {ReactNode[]} Array of React meta elements
+ *
+ * @example
+ * const metaTags = [{
+ *   _type: 'metaTag',
+ *   metaAttributes: [{
+ *     attributeKey: 'og:image',
+ *     attributeType: 'image',
+ *     attributeValueImage: { asset: { url: 'https://example.com/image.jpg' } }
+ *   }]
+ * }]
+ * const metaElements = mapSanityMetaTags(metaTags)
+ */
 export function mapSanityMetaTags(metaTags: TSanitySeo['additionalMetaTags'] = []): ReactNode[] {
   return metaTags
     .flatMap((tag, index) => {
