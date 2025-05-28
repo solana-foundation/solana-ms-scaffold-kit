@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Head from 'next/head'
-import { TSanitySeo } from '@solana/ms-tools-integrations'
+import { TSanitySeo } from '@hoodieshq/ms-tools-integrations'
 import { DEFAULT_JSON_LD } from '@/constants/metadata'
 
 /**
@@ -20,6 +20,8 @@ import { DEFAULT_JSON_LD } from '@/constants/metadata'
  * const metaElements = mapSanityMetaTags(metaTags)
  */
 export function mapSanityMetaTags(metaTags: TSanitySeo['additionalMetaTags'] = []): ReactNode[] {
+  if (!metaTags) return []
+
   return metaTags
     .flatMap((tag, index) => {
       if (tag._type !== 'metaTag' || !tag.metaAttributes) return null
