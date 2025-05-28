@@ -1,13 +1,13 @@
-import { describe, expect, it, vi, beforeEach } from 'vitest'
-import { generateStaticParams, getGenerateMetadata, generatePageMetadata } from './page'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import type { Mock } from 'vitest'
 import { LANGUAGES } from '@/constants/language'
 import { getSeoData } from '@/sanity/lib/getSeoData'
 import { pageSeoQuery } from '@/sanity/lib/queries/page'
-import type { Mock } from 'vitest'
+import { generatePageMetadata, generateStaticParams, getGenerateMetadata } from './page'
 
 // Mock the getSeoData function
 vi.mock('@/sanity/lib/getSeoData', () => ({
-  getSeoData: vi.fn()
+  getSeoData: vi.fn(),
 }))
 
 describe('page utils', () => {
@@ -16,8 +16,8 @@ describe('page utils', () => {
       const result = await generateStaticParams()
 
       expect(result).toEqual(
-        LANGUAGES.map(lang => ({
-          locale: lang.id
+        LANGUAGES.map((lang) => ({
+          locale: lang.id,
         }))
       )
     })
@@ -27,7 +27,7 @@ describe('page utils', () => {
     const mockQuery = 'test-query'
     const mockParams = {
       locale: 'en',
-      customParam: 'test'
+      customParam: 'test',
     }
 
     beforeEach(() => {
@@ -48,7 +48,7 @@ describe('page utils', () => {
       expect(getSeoData).toHaveBeenCalledWith({
         query: mockQuery,
         pathname: mockPathname,
-        params: mockParams
+        params: mockParams,
       })
       expect(result).toEqual(mockSeoData)
     })
@@ -79,7 +79,7 @@ describe('page utils', () => {
   describe('generatePageMetadata', () => {
     const mockParams = {
       locale: 'en',
-      pathname: '/test-path'
+      pathname: '/test-path',
     }
 
     beforeEach(() => {
@@ -95,7 +95,7 @@ describe('page utils', () => {
       expect(getSeoData).toHaveBeenCalledWith({
         query: pageSeoQuery,
         pathname: mockParams.pathname,
-        params: mockParams
+        params: mockParams,
       })
       expect(result).toEqual(mockSeoData)
     })
@@ -103,7 +103,7 @@ describe('page utils', () => {
     it('should handle null pathname', async () => {
       const paramsWithNullPath = {
         locale: 'en',
-        pathname: null
+        pathname: null,
       }
       const mockSeoData = { title: 'Test Page' }
       ;(getSeoData as Mock).mockResolvedValue(mockSeoData)
@@ -113,7 +113,7 @@ describe('page utils', () => {
       expect(getSeoData).toHaveBeenCalledWith({
         query: pageSeoQuery,
         pathname: null,
-        params: paramsWithNullPath
+        params: paramsWithNullPath,
       })
       expect(result).toEqual(mockSeoData)
     })

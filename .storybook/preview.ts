@@ -1,31 +1,32 @@
-import type { Preview } from '@storybook/react'
 import { withThemeByClassName } from '@storybook/addon-themes'
+import type { Preview } from '@storybook/react'
 import { initialize, mswLoader } from 'msw-storybook-addon'
+
 import '../src/styles/globals.css'
 
 // Initialize MSW
 initialize({
-  onUnhandledRequest: 'bypass'
-});
+  onUnhandledRequest: 'bypass',
+})
 
 // Mock next-intl
 const mockUseTranslations = () => (key: string) => {
-  return key === 'language_selection' ? 'Select Language' : key;
-};
+  return key === 'language_selection' ? 'Select Language' : key
+}
 
 // Mock next/navigation
 const mockUseRouter = () => ({
   push: (path: string) => {
-    console.log('Navigation to:', path);
+    console.log('Navigation to:', path)
   },
-});
+})
 
 // Add mocks to window
 if (typeof window !== 'undefined') {
   // @ts-expect-error - Mocking for Storybook
-  window.useTranslations = mockUseTranslations;
+  window.useTranslations = mockUseTranslations
   // @ts-expect-error - Mocking for Storybook
-  window.useRouter = mockUseRouter;
+  window.useRouter = mockUseRouter
 }
 
 const preview: Preview = {
@@ -54,6 +55,6 @@ const preview: Preview = {
     }),
   ],
   loaders: [mswLoader],
-};
+}
 
-export default preview;
+export default preview

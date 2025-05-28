@@ -19,7 +19,7 @@ describe('getLanguage', () => {
   })
 
   it('should return the correct language when a valid language ID is provided', () => {
-    const spanish = LANGUAGES.find(lang => lang.id === 'es')
+    const spanish = LANGUAGES.find((lang) => lang.id === 'es')
     const result = getLanguage('es')
     expect(result).toBe(spanish)
   })

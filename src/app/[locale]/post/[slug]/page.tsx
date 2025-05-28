@@ -10,15 +10,25 @@ import { getGenerateMetadata } from '@/utils/page'
 
 export { generateStaticParams } from '@/utils/page'
 
-export async function generateMetadata<
-  T extends object,
-  P extends ParamsWithLocale & { slug: string | null } = ParamsWithLocale & {
-    slug: string | null
-  } & T,
->({ params }: { params: P }): Promise<Metadata> {
-  const metadataGenerator = await getGenerateMetadata<P>(postSeoQuery, ({ slug }) => 'post/' + slug)
+type PostParams = ParamsWithLocale & { slug: string }
 
-  return await metadataGenerator({ params })
+export async function generateMetadata({
+  params,
+}: {
+  params: TParams<{ slug: string }>
+}): Promise<Metadata> {
+  const resolvedParams = await params
+  const metadataGenerator = await getGenerateMetadata<PostParams>(
+    postSeoQuery,
+    ({ slug }) => 'post/' + slug
+  )
+
+  return await metadataGenerator({
+    params: {
+      locale: resolvedParams.locale,
+      slug: resolvedParams.slug,
+    },
+  })
 }
 
 interface IPostPageProps {
@@ -26,7 +36,8 @@ interface IPostPageProps {
 }
 
 export default async function PostPage({ params }: IPostPageProps) {
-  const { locale, slug } = await params
+  const resolvedParams = await params
+  const { locale, slug } = resolvedParams
 
   // Enable static rendering
   setRequestLocale(locale)

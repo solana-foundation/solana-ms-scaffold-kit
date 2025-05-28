@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { LanguageSelect } from './LanguageSelect';
-import { LANGUAGES } from '@/constants/language';
-import { NextIntlClientProvider } from 'next-intl';
-import React from 'react';
+import React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { NextIntlClientProvider } from 'next-intl'
+import { LANGUAGES } from '@/constants/language'
+import { LanguageSelect } from './LanguageSelect'
 
 const messages = {
   utils: {
     language_selection: 'Select Language',
-  }
-};
+  },
+}
 
 const meta = {
   title: 'Components/LanguageSelect',
@@ -35,10 +35,10 @@ const meta = {
       </React.Suspense>
     ),
   ],
-} satisfies Meta<typeof LanguageSelect>;
+} satisfies Meta<typeof LanguageSelect>
 
-export default meta;
-type Story = StoryObj<typeof LanguageSelect>;
+export default meta
+type Story = StoryObj<typeof LanguageSelect>
 
 /**
  * Basic usage of the LanguageSelect component with English as the current language.
@@ -49,7 +49,7 @@ export const English: Story = {
     languages: LANGUAGES,
     locale: 'en',
   },
-};
+}
 
 /**
  * LanguageSelect with Spanish as the current language.
@@ -60,7 +60,7 @@ export const Spanish: Story = {
     languages: LANGUAGES,
     locale: 'es',
   },
-};
+}
 
 /**
  * Example with custom language options.
@@ -75,7 +75,7 @@ export const CustomLanguages: Story = {
     ],
     locale: 'fr',
   },
-};
+}
 
 /**
  * Example with many language options to demonstrate the dropdown's scrolling behavior.
@@ -96,4 +96,4 @@ export const ManyLanguages: Story = {
     ],
     locale: 'en',
   },
-};
+}

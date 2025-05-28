@@ -1,35 +1,67 @@
 # @solana/ms-scaffold-kit
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+A modern, type-safe scaffold kit for building Solana microsites and applications.
 
-## Getting Started
+## Prerequisites
 
-First, run the development server:
+- Node.js 20 or later
+- pnpm 10.11.0 or later
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Installation
+
+This project uses private packages from the GitHub registry. To install dependencies:
+
+1. Create a GitHub Personal Access Token (PAT) with `read:packages` scope
+1. Login to pnpm with your GitHub (classic) token:
+
+```shell
+pnpm login --registry=https://npm.pkg.github.com
 ```
 
-## Env setup
+1. Run the installation:
 
-Schema is described via zed in `env.mjs`. Make sure to add all of the variables necessary to your `.env` file.
+```shell
+GITHUB_TOKEN=your_github_pat_here pnpm install
+```
 
-## Dev
+## Environment Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The environment schema is described via Zod in `env.mjs`. Make sure to add all necessary variables to your `.env` file.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```shell
+# Start development server
+pnpm dev
 
-## Deploy on Vercel
+# Run tests
+pnpm test
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Build for production
+pnpm build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Project Structure
+
+```text
+src/
+  ├── components/     # React components
+  ├── constants/      # Constants and configuration
+  ├── sanity/        # Sanity CMS integration
+  ├── types/         # TypeScript type definitions
+  └── utils/         # Utility functions
+```
+
+## Features
+
+- Next.js 15.3 with App Router
+- TypeScript
+- Sanity CMS integration
+- Internationalization support
+- Storybook
+- Vitest for testing
+- ESLint + Prettier
+
+## License
+
+Private

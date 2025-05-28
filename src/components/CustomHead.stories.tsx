@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { CustomHead } from './CustomHead';
+import type { Meta, StoryObj } from '@storybook/react'
+import { CustomHead } from './CustomHead'
 
 /**
  * The `CustomHead` component is responsible for managing the document head metadata using Next.js's `Head` component.
@@ -52,10 +52,10 @@ const meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof CustomHead>;
+} satisfies Meta<typeof CustomHead>
 
-export default meta;
-type Story = StoryObj<typeof CustomHead>;
+export default meta
+type Story = StoryObj<typeof CustomHead>
 
 /**
  * A basic example showing the minimal usage with title, description, and SEO keywords.
@@ -71,7 +71,7 @@ export const Basic: Story = {
       appDirectory: true,
     },
   },
-};
+}
 
 /**
  * An advanced example showing usage with Sanity CMS meta tags, including Open Graph title and image.
@@ -89,7 +89,7 @@ export const WithSanityMetaTags: Story = {
             _type: 'metaAttribute',
             attributeKey: 'og:title',
             attributeType: 'string',
-            attributeValueString: 'Custom Open Graph Title'
+            attributeValueString: 'Custom Open Graph Title',
           },
           {
             _type: 'metaAttribute',
@@ -98,17 +98,17 @@ export const WithSanityMetaTags: Story = {
             attributeValueImage: {
               _type: 'customImage',
               asset: {
-                url: 'https://example.com/og-image.jpg'
-              }
-            }
-          }
-        ]
-      }
-    ]
+                url: 'https://example.com/og-image.jpg',
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   parameters: {
     nextjs: {
       appDirectory: true,
     },
   },
-};
+}

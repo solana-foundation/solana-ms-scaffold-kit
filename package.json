@@ -19,26 +19,28 @@
     "build-storybook": "storybook build",
     "manypkg": "manypkg check",
     "manypkg:fix": "manypkg fix",
+    "playwright:install": "pnpm exec playwright install chromium --with-deps",
     "sanity:deploy": "pnpx sanity deploy",
     "sanity:undeploy": "pnpx sanity undeploy"
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {
-    "node": "^20 || ^21"
+    "node": "^20 || ^21 || ^22"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.3",
     "@chromatic-com/storybook": "^3",
+    "@eslint/compat": "^1.2.9",
     "@eslint/eslintrc": "^3.3.1",
+    "@hoodieshq/ms-tools-analytics": "latest",
+    "@hoodieshq/ms-tools-config": "latest",
+    "@hoodieshq/ms-tools-integrations": "latest",
+    "@hoodieshq/ms-tools-ui": "latest",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@manypkg/cli": "^0.24.0",
     "@sanity/document-internationalization": "^3.3.1",
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
-    "@hoodieshq/ms-tools-analytics": "latest",
-    "@hoodieshq/ms-tools-config": "latest",
-    "@hoodieshq/ms-tools-integrations": "latest",
-    "@hoodieshq/ms-tools-ui": "latest",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-themes": "^8.6.12",
     "@storybook/blocks": "^8.6.12",

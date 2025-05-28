@@ -4,18 +4,20 @@ import { type SanityDocument } from 'next-sanity'
 import { urlFor } from '@/sanity/lib/image'
 
 export interface IPostsListViewProps {
-  posts: Array<SanityDocument & {
-    title: string
-    publishedAt: string
-    slug: { current: string }
-    image?: {
-      asset: {
-        _ref: string
-        _type: string
+  posts: Array<
+    SanityDocument & {
+      title: string
+      publishedAt: string
+      slug: { current: string }
+      image?: {
+        asset: {
+          _ref: string
+          _type: string
+        }
+        _imageUrl?: string // For story mocks
       }
-      _imageUrl?: string // For story mocks
     }
-  }>
+  >
   title: string
 }
 

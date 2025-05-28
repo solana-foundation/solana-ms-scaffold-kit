@@ -1,0 +1,31 @@
+name: Setup
+description: Common setup for Node.js and pnpm
+
+inputs:
+  reg_github_token:
+    description: GitHub token for installing private packages
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        cache: 'pnpm'
+
+    - name: Configure .npmrc with GitHub Token
+      run: |
+        echo "//npm.pkg.github.com/:_authToken=${{ inputs.reg_github_token }}" > ~/.npmrc
+      shell: bash
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+      shell: bash
+
+    - name: Check package versions
+      run: pnpm manypkg check
+      shell: bash
