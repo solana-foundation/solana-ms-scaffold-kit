@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
@@ -19,13 +19,8 @@ import { env } from '@/../env.mjs'
 
 export { generateStaticParams } from '@/utils/page'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const rubik = Rubik({
+  variable: '--font-rubik',
   subsets: ['latin'],
 })
 
@@ -53,7 +48,7 @@ export default async function RootLayout({
     <LanguageContextProvider language={language}>
       <NextIntlClientProvider>
         <html lang={locale}>
-          <body className={`${geistSans.className} ${geistMono.className}`}>
+          <body className={`${rubik.className} dark:bg-(color:--surface)`}>
             <SidebarWrapper>
               <div className="w-full flex min-h-screen flex-col">
                 <Header locale={locale} />

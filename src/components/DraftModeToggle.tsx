@@ -36,7 +36,7 @@ export function DraftModeToggle({ isEnabled }: IDraftModeToggleProps) {
         {pending ? (
           'Switching draft mode...'
         ) : (
-          <Button className="cursor-pointer" size="default" variant="outline" onClick={toggle}>
+          <Button className="cursor-pointer" variant="outline" onClick={toggle}>
             {isEnabled ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}{' '}
             {isEnabled ? 'Disable' : 'Enable'} draft mode
           </Button>

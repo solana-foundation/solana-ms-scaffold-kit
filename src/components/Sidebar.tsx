@@ -18,13 +18,8 @@ import { Logo } from './Logo'
 
 export function Sidebar() {
   return (
-    <UISidebar className="border-r border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
-      <SidebarHeader>
-        <div className="flex items-center justify-between px-4 pb-2">
-          <SidebarTrigger />
-          <Logo className="h-10 w-auto text-current" />
-        </div>
-      </SidebarHeader>
+    <UISidebar className="border-b border-gray-200 bg-slate-100 dark:border-gray-700 dark:bg-(color:--surface)">
+      <SidebarHeader className='h-15' />
       <SidebarContent className="overflow-hidden">
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
