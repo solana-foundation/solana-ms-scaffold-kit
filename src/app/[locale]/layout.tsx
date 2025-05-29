@@ -5,7 +5,10 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
 import { DraftModeToggle } from '@/components/DraftModeToggle'
+import { Header } from '@/components/Header'
 import { LanguageContextProvider } from '@/components/LanguageContextProvider'
+import { Sidebar } from '@/components/Sidebar'
+import { SidebarWrapper } from '@/components/SidebarWrapper'
 import { routing } from '@/i18n/routing'
 import { SanityLive } from '@/sanity/lib/live'
 import { getLanguage } from '@/utils/language'
@@ -13,8 +16,6 @@ import { getLanguage } from '@/utils/language'
 import '@/styles/globals.css'
 
 import { env } from '@/../env.mjs'
-import { LanguageSelect } from '@/components/LanguageSelect'
-import { LANGUAGES } from '@/constants/language'
 
 export { generateStaticParams } from '@/utils/page'
 
@@ -53,24 +54,27 @@ export default async function RootLayout({
       <NextIntlClientProvider>
         <html lang={locale}>
           <body className={`${geistSans.className} ${geistMono.className}`}>
-            <>
-              <div className="header w-full bg-slate-300 px-4 py-2 dark:bg-gray-700">
-                <LanguageSelect languages={LANGUAGES} locale={locale} />
+            <SidebarWrapper>
+              <div className="w-full flex min-h-screen flex-col">
+                <Header locale={locale} />
+                <Sidebar />
+                <main className="flex-1 pt-[60px]">
+                  {children}
+                  {showDevTools && isDraftModeEnabled && (
+                    <>
+                      <SanityLive />
+                      <VisualEditing />
+                      <DraftModeToggle isEnabled={isDraftModeEnabled} />
+                    </>
+                  )}
+                  {showDevTools && !isDraftModeEnabled && (
+                    <>
+                      <DraftModeToggle isEnabled={isDraftModeEnabled} />
+                    </>
+                  )}
+                </main>
               </div>
-              {children}
-              {showDevTools && isDraftModeEnabled && (
-                <>
-                  <SanityLive />
-                  <VisualEditing />
-                  <DraftModeToggle isEnabled={isDraftModeEnabled} />
-                </>
-              )}
-              {showDevTools && !isDraftModeEnabled && (
-                <>
-                  <DraftModeToggle isEnabled={isDraftModeEnabled} />
-                </>
-              )}
-            </>
+            </SidebarWrapper>
           </body>
         </html>
       </NextIntlClientProvider>
