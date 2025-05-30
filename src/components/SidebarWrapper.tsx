@@ -8,5 +8,5 @@ interface SidebarWrapperProps {
 }
 
 export function SidebarWrapper({ children }: SidebarWrapperProps) {
-  return <SidebarProvider>{children}</SidebarProvider>
+  return <SidebarProvider defaultOpen={false}>{children}</SidebarProvider>
 }

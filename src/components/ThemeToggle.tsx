@@ -28,6 +28,7 @@ export const ThemeToggle = () => {
 
   return (
     <Button
+      className="h-9 w-9"
       variant="outline"
       size="icon"
       onClick={toggleTheme}

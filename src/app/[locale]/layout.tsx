@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
 import { DraftModeToggle } from '@/components/DraftModeToggle'
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { LanguageContextProvider } from '@/components/LanguageContextProvider'
 import { Sidebar } from '@/components/Sidebar'
@@ -62,12 +63,13 @@ export default async function RootLayout({
                       <DraftModeToggle isEnabled={isDraftModeEnabled} />
                     </>
                   )}
-                  {showDevTools && !isDraftModeEnabled && (
+                </main>
+                <Footer appName={process.env.NEXT_PUBLIC_APP_NAME} />
+                {showDevTools && !isDraftModeEnabled && (
                     <>
                       <DraftModeToggle isEnabled={isDraftModeEnabled} />
                     </>
                   )}
-                </main>
               </div>
             </SidebarWrapper>
           </body>

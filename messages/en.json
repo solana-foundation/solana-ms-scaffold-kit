@@ -5,6 +5,13 @@
       "title": "Posts"
     }
   },
+  "navigation": {
+    "home": "Home",
+    "label": "Navigation"
+  },
+  "footer": {
+    "rights_reserved": "All rights reserved"
+  },
   "utils": {
     "back": "Back to home page",
     "loading": "Loading",

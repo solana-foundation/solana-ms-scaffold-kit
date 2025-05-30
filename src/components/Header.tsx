@@ -24,8 +24,8 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
         </div>
 
         <div className="relative z-50 flex items-center gap-4">
-          <ThemeToggle />
           <LanguageSelect languages={LANGUAGES} locale={locale} />
+          <ThemeToggle />
         </div>
       </div>
     </header>
