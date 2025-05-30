@@ -1,4 +1,4 @@
-import { getOpenGraph, TSanitySeo } from '@hoodieshq/ms-tools-integrations'
+import { getOpenGraph, TSanitySeo } from '@solana/ms-tools-integrations'
 import { DEFAULT_METADATA } from '@/constants/metadata'
 import { ParamsWithLocale } from '@/types/language'
 import { log } from '@/utils/log'

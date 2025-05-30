@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from '@hoodieshq/ms-tools-ui'
+import { Button } from '@solana/ms-tools-ui'
 import { Eye, EyeOff, X } from 'lucide-react'
 import { toggleDraftMode } from '@/app/actions'
 

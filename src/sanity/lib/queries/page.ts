@@ -1,1 +1,1 @@
-export { pageQuery, pageSeoQuery } from '@hoodieshq/ms-tools-integrations'
+export { pageQuery, pageSeoQuery } from '@solana/ms-tools-integrations'

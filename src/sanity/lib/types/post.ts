@@ -1,4 +1,4 @@
-import { TSanitySeo } from '@hoodieshq/ms-tools-integrations'
+import { TSanitySeo } from '@solana/ms-tools-integrations'
 import { SanityDocument } from 'next-sanity'
 import { Image, Slug } from 'sanity'
 
