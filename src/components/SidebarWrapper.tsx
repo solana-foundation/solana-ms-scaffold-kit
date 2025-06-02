@@ -1,7 +1,7 @@
 'use client'
 
-import { SidebarProvider } from '@hoodieshq/ms-tools-ui'
 import { ReactNode } from 'react'
+import { SidebarProvider } from '@hoodieshq/ms-tools-ui'
 
 interface SidebarWrapperProps {
   children: ReactNode

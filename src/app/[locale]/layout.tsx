@@ -1,6 +1,7 @@
 import { Rubik } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
@@ -13,7 +14,6 @@ import { SidebarWrapper } from '@/components/SidebarWrapper'
 import { routing } from '@/i18n/routing'
 import { SanityLive } from '@/sanity/lib/live'
 import { getLanguage } from '@/utils/language'
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 import '@/styles/globals.css'
 
@@ -52,7 +52,7 @@ export default async function RootLayout({
         <html lang={locale}>
           <body className={`${rubik.className} dark:bg-(color:--surface)`}>
             <SidebarWrapper>
-              <div className="w-full flex min-h-screen flex-col">
+              <div className="flex min-h-screen w-full flex-col">
                 <Header locale={locale} />
                 <Sidebar />
                 <main className="flex-1 pt-[60px]">
@@ -67,10 +67,10 @@ export default async function RootLayout({
                 </main>
                 <Footer appName={process.env.NEXT_PUBLIC_APP_NAME} />
                 {showDevTools && !isDraftModeEnabled && (
-                    <>
-                      <DraftModeToggle isEnabled={isDraftModeEnabled} />
-                    </>
-                  )}
+                  <>
+                    <DraftModeToggle isEnabled={isDraftModeEnabled} />
+                  </>
+                )}
               </div>
             </SidebarWrapper>
           </body>
