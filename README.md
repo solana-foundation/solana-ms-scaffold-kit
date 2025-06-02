@@ -2,6 +2,8 @@
 
 A modern, type-safe scaffold kit for building Solana microsites and applications.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/solana-foundation/solana-ms-scaffold-kit)
+
 ## Prerequisites
 
 - Node.js 20 or later
