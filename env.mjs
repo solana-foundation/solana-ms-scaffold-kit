@@ -23,6 +23,8 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_SHORT_NAME: z.string(),
     NEXT_PUBLIC_APP_DESCRIPTION: z.string(),
     NEXT_PUBLIC_APP_START_URL: z.string(),
+    NEXT_PUBLIC_GA_ID: z.string().optional(),
+    NEXT_PUBLIC_GTM_ID: z.string().optional(),
     DEBUG: z.string().optional(),
   },
   /*
@@ -39,6 +41,8 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
     NEXT_PUBLIC_APP_SHORT_NAME: process.env.NEXT_PUBLIC_APP_SHORT_NAME,
     NEXT_PUBLIC_APP_DESCRIPTION: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+    NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
     NODE_ENV: process.env.NODE_ENV,
     DEBUG: process.env.DEBUG,
     SANITY_VIEWER_TOKEN: process.env.SANITY_VIEWER_TOKEN,

@@ -13,6 +13,7 @@ import { SidebarWrapper } from '@/components/SidebarWrapper'
 import { routing } from '@/i18n/routing'
 import { SanityLive } from '@/sanity/lib/live'
 import { getLanguage } from '@/utils/language'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 import '@/styles/globals.css'
 
@@ -73,6 +74,8 @@ export default async function RootLayout({
               </div>
             </SidebarWrapper>
           </body>
+          {env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />}
+          {env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />}
         </html>
       </NextIntlClientProvider>
     </LanguageContextProvider>
