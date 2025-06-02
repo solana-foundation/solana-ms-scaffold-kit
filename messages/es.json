@@ -4,6 +4,13 @@
       "title": "Publicaciones"
     }
   },
+  "navigation": {
+    "home": "Inicio",
+    "label": "Navegación"
+  },
+  "footer": {
+    "rights_reserved": "Todos los derechos reservados"
+  },
   "utils": {
     "back": "Regresar a la página de inicio",
     "loading": "Cargando",

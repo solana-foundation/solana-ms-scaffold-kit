@@ -1,11 +1,15 @@
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { VisualEditing } from 'next-sanity'
 import { DraftModeToggle } from '@/components/DraftModeToggle'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
 import { LanguageContextProvider } from '@/components/LanguageContextProvider'
+import { Sidebar } from '@/components/Sidebar'
+import { SidebarWrapper } from '@/components/SidebarWrapper'
 import { routing } from '@/i18n/routing'
 import { SanityLive } from '@/sanity/lib/live'
 import { getLanguage } from '@/utils/language'
@@ -13,18 +17,11 @@ import { getLanguage } from '@/utils/language'
 import '@/styles/globals.css'
 
 import { env } from '@/../env.mjs'
-import { LanguageSelect } from '@/components/LanguageSelect'
-import { LANGUAGES } from '@/constants/language'
 
 export { generateStaticParams } from '@/utils/page'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const rubik = Rubik({
+  variable: '--font-rubik',
   subsets: ['latin'],
 })
 
@@ -52,25 +49,29 @@ export default async function RootLayout({
     <LanguageContextProvider language={language}>
       <NextIntlClientProvider>
         <html lang={locale}>
-          <body className={`${geistSans.className} ${geistMono.className}`}>
-            <>
-              <div className="header w-full bg-slate-300 px-4 py-2 dark:bg-gray-700">
-                <LanguageSelect languages={LANGUAGES} locale={locale} />
+          <body className={`${rubik.className} dark:bg-(color:--surface)`}>
+            <SidebarWrapper>
+              <div className="w-full flex min-h-screen flex-col">
+                <Header locale={locale} />
+                <Sidebar />
+                <main className="flex-1 pt-[60px]">
+                  {children}
+                  {showDevTools && isDraftModeEnabled && (
+                    <>
+                      <SanityLive />
+                      <VisualEditing />
+                      <DraftModeToggle isEnabled={isDraftModeEnabled} />
+                    </>
+                  )}
+                </main>
+                <Footer appName={process.env.NEXT_PUBLIC_APP_NAME} />
+                {showDevTools && !isDraftModeEnabled && (
+                    <>
+                      <DraftModeToggle isEnabled={isDraftModeEnabled} />
+                    </>
+                  )}
               </div>
-              {children}
-              {showDevTools && isDraftModeEnabled && (
-                <>
-                  <SanityLive />
-                  <VisualEditing />
-                  <DraftModeToggle isEnabled={isDraftModeEnabled} />
-                </>
-              )}
-              {showDevTools && !isDraftModeEnabled && (
-                <>
-                  <DraftModeToggle isEnabled={isDraftModeEnabled} />
-                </>
-              )}
-            </>
+            </SidebarWrapper>
           </body>
         </html>
       </NextIntlClientProvider>

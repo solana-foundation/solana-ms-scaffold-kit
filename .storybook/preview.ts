@@ -38,6 +38,19 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: {
+      default: 'dark',
+      values: [
+        {
+          name: 'light',
+          value: '#fff',
+        },
+        {
+          name: 'dark',
+          value: '#1d181a',
+        },
+      ],
+    },
     nextjs: {
       appDirectory: true,
     },
@@ -45,13 +58,14 @@ const preview: Preview = {
       handlers: [],
     },
   },
+  tags: ['autodocs'],
   decorators: [
     withThemeByClassName({
       themes: {
         light: 'light',
         dark: 'dark',
       },
-      defaultTheme: 'light',
+      defaultTheme: 'dark',
     }),
   ],
   loaders: [mswLoader],

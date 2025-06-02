@@ -32,16 +32,16 @@ export function DraftModeToggle({ isEnabled }: IDraftModeToggleProps) {
 
   return (
     <div className="relative z-50 h-11 w-full">
-      <div className="fixed bottom-0 z-50 col-auto flex h-11 w-full items-center justify-end bg-orange-300 px-4 dark:bg-yellow-600">
+      <div className="px-4 fixed bottom-0 z-50 col-auto flex h-11 w-full items-center justify-end border-t border-[var(--border)] bg-slate-200 dark:bg-[var(--surface)]">
         {pending ? (
           'Switching draft mode...'
         ) : (
-          <Button className="cursor-pointer" size="default" variant="outline" onClick={toggle}>
+          <Button className="cursor-pointer h-9" variant="ghost" onClick={toggle}>
             {isEnabled ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}{' '}
             {isEnabled ? 'Disable' : 'Enable'} draft mode
           </Button>
         )}
-        <Button className="ml-2 cursor-pointer" size="icon" variant="outline" onClick={hidePanel}>
+        <Button className="ml-2 cursor-pointer h-9 w-9" size="icon" variant="outline" onClick={hidePanel}>
           <X className="h-4 w-4" />
         </Button>
       </div>
