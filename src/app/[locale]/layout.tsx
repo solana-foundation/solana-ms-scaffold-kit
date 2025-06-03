@@ -44,6 +44,7 @@ export default async function RootLayout({
 
   const language = getLanguage(locale)
   const isDraftModeEnabled = (await draftMode()).isEnabled
+  const isProduction = env.NODE_ENV === 'production'
   const showDevTools = env.NODE_ENV === 'development' && env.SANITY_VIEWER_TOKEN
 
   return (
@@ -74,8 +75,8 @@ export default async function RootLayout({
               </div>
             </SidebarWrapper>
           </body>
-          {env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />}
-          {env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />}
+          {env.NEXT_PUBLIC_GA_ID && isProduction && <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />}
+          {env.NEXT_PUBLIC_GTM_ID && isProduction && <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />}
         </html>
       </NextIntlClientProvider>
     </LanguageContextProvider>

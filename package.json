@@ -20,8 +20,7 @@
     "manypkg": "manypkg check",
     "manypkg:fix": "manypkg fix",
     "playwright:install": "pnpm exec playwright install chromium --with-deps",
-    "sanity:deploy": "pnpx sanity deploy",
-    "sanity:undeploy": "pnpx sanity undeploy"
+    "sanity:deploy": "pnpx sanity deploy"
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {
