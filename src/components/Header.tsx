@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { SidebarTrigger } from '@hoodieshq/ms-tools-ui'
+import { SidebarTrigger } from '@solana/ms-tools-ui'
 import { LANGUAGES } from '@/constants/language'
 import { LanguageSelect } from './LanguageSelect'
 import { Logo } from './Logo'
