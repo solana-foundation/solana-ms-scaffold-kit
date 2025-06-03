@@ -18,4 +18,4 @@
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] Lint and prettier checks pass locally
-- [ ] I run the changeset and updated versions of the packages and repository (if applicable)
+- [ ] I updated changelog and updated versions of the packages and repository (if applicable)
