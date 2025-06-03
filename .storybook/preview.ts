@@ -23,9 +23,7 @@ const mockUseRouter = () => ({
 
 // Add mocks to window
 if (typeof window !== 'undefined') {
-  // @ts-expect-error - Mocking for Storybook
   window.useTranslations = mockUseTranslations
-  // @ts-expect-error - Mocking for Storybook
   window.useRouter = mockUseRouter
 }
 
