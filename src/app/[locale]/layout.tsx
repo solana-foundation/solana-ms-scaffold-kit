@@ -75,8 +75,12 @@ export default async function RootLayout({
               </div>
             </SidebarWrapper>
           </body>
-          {env.NEXT_PUBLIC_GA_ID && isProduction && <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />}
-          {env.NEXT_PUBLIC_GTM_ID && isProduction && <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />}
+          {env.NEXT_PUBLIC_GA_ID && isProduction && (
+            <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />
+          )}
+          {env.NEXT_PUBLIC_GTM_ID && isProduction && (
+            <GoogleTagManager gtmId={env.NEXT_PUBLIC_GTM_ID} />
+          )}
         </html>
       </NextIntlClientProvider>
     </LanguageContextProvider>
