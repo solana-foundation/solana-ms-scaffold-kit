@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@solana/ms-tools-ui/styles.css';
+@import '@solana-foundation/ms-tools-ui/styles.css';
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { TSanitySeo } from '@solana/ms-tools-integrations'
+import { TSanitySeo } from '@solana-foundation/ms-tools-integrations'
 import { SanityDocument } from 'next-sanity'
 
 export interface ISanityPage extends SanityDocument {
