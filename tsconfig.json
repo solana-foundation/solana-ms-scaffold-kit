@@ -1,5 +1,5 @@
 {
-  "extends": "@hoodieshq/ms-tools-config/tsconfig.json",
+  "extends": "@solana/ms-tools-config/tsconfig.json",
   "compilerOptions": {
     "target": "ES2017",
     "lib": [

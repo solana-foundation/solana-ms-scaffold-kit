@@ -24,16 +24,16 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.1
         version: 3.3.1
-      '@hoodieshq/ms-tools-analytics':
+      '@solana/ms-tools-analytics':
         specifier: latest
         version: 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(react@19.1.0)(typescript@5.8.3)(yaml@2.8.0)
-      '@hoodieshq/ms-tools-config':
+      '@solana/ms-tools-config':
         specifier: latest
         version: 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
-      '@hoodieshq/ms-tools-integrations':
+      '@solana/ms-tools-integrations':
         specifier: latest
         version: 0.1.0(8e8c1f466b3f9eb7a8128fe5705da0de)
-      '@hoodieshq/ms-tools-ui':
+      '@solana/ms-tools-ui':
         specifier: latest
         version: 0.8.0(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(prettier@3.5.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)(yaml@2.8.0)
       '@ianvs/prettier-plugin-sort-imports':
@@ -1266,27 +1266,27 @@ packages:
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
 
-  '@hoodieshq/ms-tools-analytics@0.1.0':
-    resolution: {integrity: sha512-uSUyN+7dUIi86173JkQmJHiup++sXVgsFfKrkhhc1TLxPfsaFLHAMRFXbKFbkhXXdC9SkAij4yK/80aaeiRdZA==, tarball: https://npm.pkg.github.com/download/@hoodieshq/ms-tools-analytics/0.1.0/0a68d23e91019f0c65f5131bf97e639ab2fe4c75}
+  '@solana/ms-tools-analytics@0.1.0':
+    resolution: {integrity: sha512-uSUyN+7dUIi86173JkQmJHiup++sXVgsFfKrkhhc1TLxPfsaFLHAMRFXbKFbkhXXdC9SkAij4yK/80aaeiRdZA==, tarball: https://npm.pkg.github.com/download/@solana/ms-tools-analytics/0.1.0/0a68d23e91019f0c65f5131bf97e639ab2fe4c75}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
-  '@hoodieshq/ms-tools-config@0.1.0':
-    resolution: {integrity: sha512-YeXE/w0s+d07VZiNw8La0LM8uL47pSKDsoHQevVBcopV+XwVl8lR4+dww18kQ0o9vhnAP0Mx/uv/FgzxyvDy1A==, tarball: https://npm.pkg.github.com/download/@hoodieshq/ms-tools-config/0.1.0/08b7367acfd17170f5bd68d0356c82a51c27a4cf}
+  '@solana/ms-tools-config@0.1.0':
+    resolution: {integrity: sha512-YeXE/w0s+d07VZiNw8La0LM8uL47pSKDsoHQevVBcopV+XwVl8lR4+dww18kQ0o9vhnAP0Mx/uv/FgzxyvDy1A==, tarball: https://npm.pkg.github.com/download/@solana/ms-tools-config/0.1.0/08b7367acfd17170f5bd68d0356c82a51c27a4cf}
     peerDependencies:
       eslint: ^9.25.1
       prettier: ^3.5.3
       typescript: ^5.5.3
 
-  '@hoodieshq/ms-tools-integrations@0.1.0':
-    resolution: {integrity: sha512-QZPOiVKVdu/ScRDC8cM9MpbRJroYZN5aOPo/UlVgCZzQISeLDo6pf48JSYIta14eoY8gFrC+qBjczeQyGD6yaQ==, tarball: https://npm.pkg.github.com/download/@hoodieshq/ms-tools-integrations/0.1.0/f8092d71faaa2b23528cf907e1a11fd26c73794b}
+  '@solana/ms-tools-integrations@0.1.0':
+    resolution: {integrity: sha512-QZPOiVKVdu/ScRDC8cM9MpbRJroYZN5aOPo/UlVgCZzQISeLDo6pf48JSYIta14eoY8gFrC+qBjczeQyGD6yaQ==, tarball: https://npm.pkg.github.com/download/@solana/ms-tools-integrations/0.1.0/f8092d71faaa2b23528cf907e1a11fd26c73794b}
     peerDependencies:
       next-sanity: ^9.11.1
       react: ^18.0.0 || ^19.0.0
       sanity: ^3.88.3
 
-  '@hoodieshq/ms-tools-ui@0.8.0':
-    resolution: {integrity: sha512-m3rtNN1ZMquwjNLBEPnFSgcw13ovyrcVapA1oXbrbolkEPeooiZSb/Tia4dE3f+ml25+RwxyQEomSL/x8srE8w==, tarball: https://npm.pkg.github.com/download/@hoodieshq/ms-tools-ui/0.8.0/6f1d1b59653d4026f607c82bcbdc8f392c172bc0}
+  '@solana/ms-tools-ui@0.6.0':
+    resolution: {integrity: sha512-BpWT16F6yYDvL0xOQXllFyNq6ysjQBM1aAmATZk/MR75v3NtGo4YnGUMBZIdwlb/2MnlBGEbB+F7QeCc1/3FcQ==, tarball: https://npm.pkg.github.com/download/@solana/ms-tools-ui/0.6.0/e3e351a68da33c4e431bf61df6ac533621ee4f2c}
     peerDependencies:
       react: ^18.0.0 || ^19.1.0
       react-dom: ^18.0.0 || ^19.1.0
@@ -9920,9 +9920,9 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@hoodieshq/ms-tools-analytics@0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(react@19.1.0)(typescript@5.8.3)(yaml@2.8.0)':
+  '@solana/ms-tools-analytics@0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(react@19.1.0)(typescript@5.8.3)(yaml@2.8.0)':
     dependencies:
-      '@hoodieshq/ms-tools-config': 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
+      '@solana/ms-tools-config': 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
       '@ianvs/prettier-plugin-sort-imports': 4.4.1(prettier@3.5.3)
       '@testing-library/dom': 10.4.0
       '@types/node': 22.15.21
@@ -9940,7 +9940,7 @@ snapshots:
       - typescript
       - yaml
 
-  '@hoodieshq/ms-tools-config@0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)':
+  '@solana/ms-tools-config@0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)':
     dependencies:
       eslint: 9.27.0(jiti@2.4.2)
       prettier: 3.5.3
@@ -9956,9 +9956,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@hoodieshq/ms-tools-integrations@0.1.0(8e8c1f466b3f9eb7a8128fe5705da0de)':
+  '@solana/ms-tools-integrations@0.1.0(8e8c1f466b3f9eb7a8128fe5705da0de)':
     dependencies:
-      '@hoodieshq/ms-tools-config': 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
+      '@solana/ms-tools-config': 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
       '@ianvs/prettier-plugin-sort-imports': 4.4.1(prettier@3.5.3)
       '@testing-library/dom': 10.4.0
       '@types/node': 22.15.21
@@ -9978,9 +9978,9 @@ snapshots:
       - typescript
       - yaml
 
-  '@hoodieshq/ms-tools-ui@0.8.0(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(prettier@3.5.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)(yaml@2.8.0)':
+  '@solana/ms-tools-ui@0.8.0(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(prettier@3.5.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)(yaml@2.8.0)':
     dependencies:
-      '@hoodieshq/ms-tools-config': 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
+      '@solana/ms-tools-config': 0.1.0(eslint@9.27.0(jiti@2.4.2))(jiti@2.4.2)(postcss@8.5.3)(prettier@3.5.3)(typescript@5.8.3)(yaml@2.8.0)
       '@hookform/resolvers': 5.0.1(react-hook-form@7.56.4(react@19.1.0))
       '@radix-ui/react-alert-dialog': 1.1.14(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-aspect-ratio': 1.1.7(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)

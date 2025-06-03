@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   Sidebar as UISidebar,
-} from '@hoodieshq/ms-tools-ui'
+} from '@solana/ms-tools-ui'
 import { Home } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 

@@ -1,7 +1,7 @@
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { FlatCompat } from '@eslint/eslintrc'
-import { configs } from '@hoodieshq/ms-tools-config/eslint.config.react.mjs'
+import { configs } from '@solana/ms-tools-config/eslint.config.react.mjs'
 import { defineConfig } from 'eslint/config'
 
 const __filename = fileURLToPath(import.meta.url)

@@ -1,4 +1,4 @@
-import { seo } from '@hoodieshq/ms-tools-integrations'
+import { seo } from '@solana/ms-tools-integrations'
 import { groq } from 'next-sanity'
 
 export const postQuery = groq`*[
