@@ -60,6 +60,15 @@ pnpm dev
 # Run tests
 pnpm test
 
+# Run tests in watch mode
+pnpm test:watch
+
+# Run tests with coverage
+pnpm test --coverage
+
+# Start Storybook for component development and testing
+pnpm storybook
+
 # Build for production
 pnpm build
 
@@ -84,8 +93,11 @@ src/
 - TypeScript
 - Sanity CMS integration with visual editing
 - Internationalization (i18n) support
-- Storybook for component development
-- Vitest for testing
+- Comprehensive testing setup:
+  - Vitest for unit and integration testing
+  - Storybook with play functions for component testing
+  - Testing Library for DOM testing
+  - Automated CI testing pipeline
 - ESLint + Prettier
 - Google Analytics and Tag Manager integration
 - SEO optimization tools
@@ -97,8 +109,10 @@ Comprehensive documentation is available in the `docs` folder:
 - [Analytics](docs/analytics.md) - Google Analytics and Tag Manager setup
 - [Content Management](docs/content_management.md) - Sanity CMS integration and usage
 - [Environment Variables](docs/env.md) - Configuration reference
+- [Testing](docs/testing.md) - Testing guide with Vitest and Storybook
 - [Tools](docs/tools.md) - Project tools and utilities (@solana/ms-tools-*)
 - [Translations](docs/translations.md) - Internationalization guide
+- [Contributing](docs/contributing.md) - Contributing guide
 
 ## Tools and Packages
 

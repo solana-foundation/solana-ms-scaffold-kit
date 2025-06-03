@@ -45,15 +45,12 @@
 
 - Use functional components
 - Implement proper prop types
-- Follow the component folder structure:
+- Add component stories
 
   ```text
   components/
-    └── YourComponent/
-        ├── index.tsx
-        ├── YourComponent.tsx
-        ├── YourComponent.stories.tsx
-        └── types.ts
+    ├── YourComponent.tsx
+    └── YourComponent.stories.tsx
   ```
 
 ### Styling
