@@ -1,4 +1,5 @@
 # @solana-foundation/ms-scaffold-kit
+[![Build](https://github.com/solana-foundation/solana-ms-scaffold-kit/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/solana-foundation/solana-ms-scaffold-kit/actions/workflows/build.yml)
 
 A modern, type-safe scaffold kit for building Solana microsites and applications.
 
