@@ -1,4 +1,4 @@
-import baseConfig from '@solana/ms-tools-config/postcss.config.mjs'
+import baseConfig from '@solana-foundation/ms-tools-config/postcss.config.mjs'
 
 const postcssConfig = {
   ...baseConfig,

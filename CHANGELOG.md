@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated to latest @solana/ms-tools-* packages
+- Updated to latest @solana-foundation/ms-tools-* packages
 - Migrated to pnpm for package management
 
 ### Security

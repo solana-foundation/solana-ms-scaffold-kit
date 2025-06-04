@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Button } from '@solana/ms-tools-ui'
+import { Button } from '@solana-foundation/ms-tools-ui'
 import { Moon, Sun } from 'lucide-react'
 
 export const ThemeToggle = () => {

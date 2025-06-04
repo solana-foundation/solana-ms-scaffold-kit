@@ -2,7 +2,13 @@
 
 import React, { useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@solana/ms-tools-ui'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@solana-foundation/ms-tools-ui'
 import { useTranslations } from 'next-intl'
 
 export interface Language {

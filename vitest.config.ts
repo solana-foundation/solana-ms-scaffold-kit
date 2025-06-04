@@ -12,7 +12,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-    workspace: [
+    projects: [
       {
         extends: true,
         plugins: [

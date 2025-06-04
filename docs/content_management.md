@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses Sanity CMS for content management, enhanced with `@solana/ms-tools-integrations` package and various Sanity plugins for a complete content management solution.
+This project uses Sanity CMS for content management, enhanced with `@solana-foundation/ms-tools-integrations` package and various Sanity plugins for a complete content management solution.
 
 ## Schema Types
 
@@ -33,14 +33,14 @@ This project uses Sanity CMS for content management, enhanced with `@solana/ms-t
    }
    ```
 
-## @solana/ms-tools-integrations Usage
+## @solana-foundation/ms-tools-integrations Usage
 
 The package provides several utilities for Sanity integration:
 
 1. **Language Field**
 
    ```typescript
-   import { LANGUAGE_FIELD } from '@solana/ms-tools-integrations'
+   import { LANGUAGE_FIELD } from '@solana-foundation/ms-tools-integrations'
 
    defineField(LANGUAGE_FIELD)
    ```
@@ -48,7 +48,7 @@ The package provides several utilities for Sanity integration:
 2. **SEO Types**
 
    ```typescript
-   import { TSanitySeo } from '@solana/ms-tools-integrations'
+   import { TSanitySeo } from '@solana-foundation/ms-tools-integrations'
    ```
 
 ## Sanity Studio
@@ -101,7 +101,7 @@ Key variables for Sanity:
 3. Add to schema types in `src/sanity/schemaTypes/index.ts`
 4. Update internationalization configuration if needed
 
-If the schema type is common and could be reused, consider including it in the `@solana/ms-tools-integrations`.
+If the schema type is common and could be reused, consider including it in the `@solana-foundation/ms-tools-integrations`.
 
 ### Best Practices
 

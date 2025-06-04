@@ -1,4 +1,5 @@
-# @solana/ms-scaffold-kit
+# @solana-foundation/ms-scaffold-kit
+[![Build](https://github.com/solana-foundation/solana-ms-scaffold-kit/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/solana-foundation/solana-ms-scaffold-kit/actions/workflows/build.yml)
 
 A modern, type-safe scaffold kit for building Solana microsites and applications.
 
@@ -110,7 +111,7 @@ Comprehensive documentation is available in the `docs` folder:
 - [Content Management](docs/content_management.md) - Sanity CMS integration and usage
 - [Environment Variables](docs/env.md) - Configuration reference
 - [Testing](docs/testing.md) - Testing guide with Vitest and Storybook
-- [Tools](docs/tools.md) - Project tools and utilities (@solana/ms-tools-*)
+- [Tools](docs/tools.md) - Project tools and utilities (@solana-foundation/ms-tools-*)
 - [Translations](docs/translations.md) - Internationalization guide
 - [Contributing](docs/contributing.md) - Contributing guide
 
@@ -118,9 +119,9 @@ Comprehensive documentation is available in the `docs` folder:
 
 The project uses several @solana packages:
 
-- [@solana/ms-tools-ui](https://github.com/solana-foundation/solana-ms-tools/) - UI component library
-- [@solana/ms-tools-config](https://github.com/solana-foundation/solana-ms-tools/) - Shared configuration
-- [@solana/ms-tools-integrations](https://github.com/solana-foundation/solana-ms-tools/) - CMS and third-party integrations
+- [@solana-foundation/ms-tools-ui](https://github.com/solana-foundation/solana-ms-tools/) - UI component library
+- [@solana-foundation/ms-tools-config](https://github.com/solana-foundation/solana-ms-tools/) - Shared configuration
+- [@solana-foundation/ms-tools-integrations](https://github.com/solana-foundation/solana-ms-tools/) - CMS and third-party integrations
 
 ## License
 

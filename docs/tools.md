@@ -1,6 +1,6 @@
 # Project Tools
 
-## @solana/ms-tools-ui
+## @solana-foundation/ms-tools-ui
 
 A comprehensive UI component library that provides pre-built, customizable components following Solana's design system.
 [Documentation](https://github.com/solana-foundation/solana-ms-tools/)
@@ -34,7 +34,7 @@ A comprehensive UI component library that provides pre-built, customizable compo
    - Extend using Tailwind classes
    - Maintain design system consistency
 
-## @solana/ms-tools-config
+## @solana-foundation/ms-tools-config
 
 Shared configuration package that provides standardized settings and utilities.
 
@@ -62,7 +62,7 @@ Shared configuration package that provides standardized settings and utilities.
 ```javascript
 // .eslintrc.js
 module.exports = {
-  extends: ['@solana/ms-tools-config/eslint'],
+  extends: ['@solana-foundation/ms-tools-config/eslint'],
   // Project-specific overrides
 }
 ```
@@ -72,7 +72,7 @@ module.exports = {
 ```javascript
 // prettier.config.js
 module.exports = {
-  ...require('@solana/ms-tools-config/prettier'),
+  ...require('@solana-foundation/ms-tools-config/prettier'),
   // Project-specific settings
 }
 ```
@@ -82,7 +82,7 @@ module.exports = {
 ```json
 // tsconfig.json
 {
-  "extends": "@solana/ms-tools-config/typescript/next.json",
+  "extends": "@solana-foundation/ms-tools-config/typescript/next.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
@@ -112,7 +112,7 @@ module.exports = {
 - [ESLint Rules](https://eslint.org/docs/rules/)
 - [Prettier Options](https://prettier.io/docs/en/options.html)
 
-## @solana/ms-tools-integrations
+## @solana-foundation/ms-tools-integrations
 
 Integration utilities for Sanity CMS and other third-party services in Solana projects.
 
@@ -133,7 +133,7 @@ Integration utilities for Sanity CMS and other third-party services in Solana pr
 #### Language Field
 
 ```typescript
-import { LANGUAGE_FIELD } from '@solana/ms-tools-integrations'
+import { LANGUAGE_FIELD } from '@solana-foundation/ms-tools-integrations'
 
 // In Sanity schema definition
 defineField(LANGUAGE_FIELD)
@@ -142,7 +142,7 @@ defineField(LANGUAGE_FIELD)
 #### SEO Types
 
 ```typescript
-import { TSanitySeo } from '@solana/ms-tools-integrations'
+import { TSanitySeo } from '@solana-foundation/ms-tools-integrations'
 
 // In content type definitions
 interface IPage {
