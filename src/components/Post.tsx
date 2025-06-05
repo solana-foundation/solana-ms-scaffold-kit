@@ -1,6 +1,4 @@
-import { draftMode } from 'next/headers'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { client } from '@/sanity/lib/client'
 import { sanityFetch } from '@/sanity/lib/live'
 import { postQuery } from '@/sanity/lib/queries/post'
 import { ParamsWithLocale } from '@/types/language'
@@ -18,15 +16,12 @@ export async function Post({ locale, slug }: IPostPageProps) {
   setRequestLocale(locale)
 
   const t = await getTranslations('utils')
-  const { isEnabled: isDraftMode } = await draftMode()
 
   // Use sanityFetch for draft mode, regular client for production
-  const post = isDraftMode
-    ? (await sanityFetch({
-        query: postQuery,
-        params: { language: locale, slug },
-      })).data
-    : await client.fetch(postQuery, { language: locale, slug })
+  const { data: post } = await sanityFetch({
+    query: postQuery,
+    params: { language: locale, slug },
+  })
 
   log('post', post)
 
