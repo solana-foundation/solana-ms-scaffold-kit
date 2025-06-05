@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { type SanityDocument } from 'next-sanity'
 import { urlFor } from '@/sanity/lib/image'
 
@@ -28,7 +28,7 @@ export function PostsListView({ posts, title }: IPostsListViewProps) {
       <ul className="flex flex-col gap-y-4">
         {posts.map((post) => (
           <li className="hover:underline" key={post._id}>
-            <Link href={`/post/${post.slug.current}`}>
+            <Link href={`/post/${post.slug.current}`} locale={post.language}>
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
               {post.image && (
