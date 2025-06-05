@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
 import { type SanityDocument } from 'next-sanity'
+import { Link } from '@/i18n/navigation'
 import { urlFor } from '@/sanity/lib/image'
 
 export interface IPostsListViewProps {
