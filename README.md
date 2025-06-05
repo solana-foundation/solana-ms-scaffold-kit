@@ -1,9 +1,36 @@
 # @solana-foundation/ms-scaffold-kit
+
 [![Build](https://github.com/solana-foundation/solana-ms-scaffold-kit/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/solana-foundation/solana-ms-scaffold-kit/actions/workflows/build.yml)
 
 A modern, type-safe scaffold kit for building Solana microsites and applications.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/solana-foundation/solana-ms-scaffold-kit)
+## 🚀 Deploy with Vercel
+
+Click the button below to deploy the scaffold kit to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnchigryay%2Fsolana-ms-scaffold-kit&project-name=solana-ms-scaffold-kit&repository-name=solana-ms-scaffold-kit&build-command=pnpm%20build&output-directory=dist&env=NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,NEXT_PUBLIC_APP_URL,NEXT_PUBLIC_APP_START_URL,NEXT_PUBLIC_APP_NAME,NEXT_PUBLIC_APP_SHORT_NAME,NEXT_PUBLIC_APP_DESCRIPTION,GITHUB_TOKEN)
+
+### Required Environment Variables
+
+| Variable                        | Suggested Value                              |
+| ------------------------------- | -------------------------------------------- |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | _(from your Sanity project)_                 |
+| `NEXT_PUBLIC_SANITY_DATASET`    | `production`                                 |
+| `NEXT_PUBLIC_APP_URL`           | `https://solana-ms-scaffold-kit.vercel.app`  |
+| `NEXT_PUBLIC_APP_START_URL`     | `/`                                          |
+| `NEXT_PUBLIC_APP_NAME`          | `MS scaffold kit`                            |
+| `NEXT_PUBLIC_APP_SHORT_NAME`    | `Scaffold kit`                               |
+| `NEXT_PUBLIC_APP_DESCRIPTION`   | `MS scaffold kit description`                |
+| `GITHUB_TOKEN`                  | _(needed to install GitHub-hosted packages)_ |
+
+### Optional Environment Variables
+
+These can be added manually after deployment if needed:
+
+- `SANITY_VIEWER_TOKEN`
+- `DEBUG`
+- `NEXT_PUBLIC_GA_ID`
+- `NEXT_PUBLIC_GTM_ID`
 
 ## Quick Start
 
@@ -111,7 +138,7 @@ Comprehensive documentation is available in the `docs` folder:
 - [Content Management](docs/content_management.md) - Sanity CMS integration and usage
 - [Environment Variables](docs/env.md) - Configuration reference
 - [Testing](docs/testing.md) - Testing guide with Vitest and Storybook
-- [Tools](docs/tools.md) - Project tools and utilities (@solana-foundation/ms-tools-*)
+- [Tools](docs/tools.md) - Project tools and utilities (@solana-foundation/ms-tools-\*)
 - [Translations](docs/translations.md) - Internationalization guide
 - [Contributing](docs/contributing.md) - Contributing guide
 
@@ -123,6 +150,17 @@ The project uses several @solana packages:
 - [@solana-foundation/ms-tools-config](https://github.com/solana-foundation/solana-ms-tools/) - Shared configuration
 - [@solana-foundation/ms-tools-integrations](https://github.com/solana-foundation/solana-ms-tools/) - CMS and third-party integrations
 
-## License
+## Deploy
 
-Private
+Use Vercel deploy button and follow the instructions.
+
+### Required environment variables
+
+Set all the variables requested during the deploy.
+
+### Optional environment variables (set manually after deploy):
+
+- `SANITY_VIEWER_TOKEN`
+- `DEBUG`
+- `NEXT_PUBLIC_GA_ID`
+- `NEXT_PUBLIC_GTM_ID`

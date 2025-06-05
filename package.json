@@ -22,7 +22,7 @@
     "playwright:install": "pnpm exec playwright install chromium --with-deps",
     "sanity:deploy": "pnpx sanity deploy"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": "^20 || ^21 || ^22"
   },
@@ -33,6 +33,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@manypkg/cli": "^0.24.0",
+    "@mdx-js/react": "^3.1.0",
     "@next/third-parties": "^15.3.3",
     "@sanity/document-internationalization": "^3.3.1",
     "@sanity/image-url": "1",
