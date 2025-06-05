@@ -8,11 +8,11 @@ A modern, type-safe scaffold kit for building Solana microsites and applications
 
 Click the button below to deploy the scaffold kit to Vercel:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnchigryay%2Fsolana-ms-scaffold-kit&project-name=solana-ms-scaffold-kit&repository-name=solana-ms-scaffold-kit&build-command=pnpm%20build&output-directory=dist&env=NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,NEXT_PUBLIC_APP_URL,NEXT_PUBLIC_APP_START_URL,NEXT_PUBLIC_APP_NAME,NEXT_PUBLIC_APP_SHORT_NAME,NEXT_PUBLIC_APP_DESCRIPTION,NODE_ENV,GITHUB_TOKEN)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnchigryay%2Fsolana-ms-scaffold-kit&project-name=solana-ms-scaffold-kit&repository-name=solana-ms-scaffold-kit&build-command=pnpm%20build&output-directory=dist&env=NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,NEXT_PUBLIC_APP_URL,NEXT_PUBLIC_APP_START_URL,NEXT_PUBLIC_APP_NAME,NEXT_PUBLIC_APP_SHORT_NAME,NEXT_PUBLIC_APP_DESCRIPTION,GITHUB_TOKEN)
 
 ### Required Environment Variables
 
-| Variable                        | Suggested Value (you can override)           |
+| Variable                        | Suggested Value                              |
 | ------------------------------- | -------------------------------------------- |
 | `NEXT_PUBLIC_SANITY_PROJECT_ID` | _(from your Sanity project)_                 |
 | `NEXT_PUBLIC_SANITY_DATASET`    | `production`                                 |
@@ -21,12 +21,11 @@ Click the button below to deploy the scaffold kit to Vercel:
 | `NEXT_PUBLIC_APP_NAME`          | `MS scaffold kit`                            |
 | `NEXT_PUBLIC_APP_SHORT_NAME`    | `Scaffold kit`                               |
 | `NEXT_PUBLIC_APP_DESCRIPTION`   | `MS scaffold kit description`                |
-| `NODE_ENV`                      | `production`                                 |
 | `GITHUB_TOKEN`                  | _(needed to install GitHub-hosted packages)_ |
 
 ### Optional Environment Variables
 
-These can be added after deployment via the Vercel dashboard if needed:
+These can be added manually after deployment if needed:
 
 - `SANITY_VIEWER_TOKEN`
 - `DEBUG`
