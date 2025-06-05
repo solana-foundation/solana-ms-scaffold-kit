@@ -17,6 +17,7 @@ export async function Post({ locale, slug }: IPostPageProps) {
 
   const t = await getTranslations('utils')
 
+  // Use sanityFetch for draft mode, regular client for production
   const { data: post } = await sanityFetch({
     query: postQuery,
     params: { language: locale, slug },

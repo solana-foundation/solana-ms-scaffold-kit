@@ -20,7 +20,8 @@
     "manypkg": "manypkg check",
     "manypkg:fix": "manypkg fix",
     "playwright:install": "pnpm exec playwright install chromium --with-deps",
-    "sanity:deploy": "pnpx sanity deploy"
+    "sanity:deploy": "pnpx sanity deploy",
+    "install:authed": "env NPM_CONFIG_//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN pnpm install"
   },
   "packageManager": "pnpm@10.11.1",
   "engines": {

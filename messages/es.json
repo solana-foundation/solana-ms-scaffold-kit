@@ -18,6 +18,7 @@
     "success": "Éxito",
     "warning": "Advertencia",
     "info": "Información",
-    "language_selection": "Selección de idioma"
+    "language_selection": "Selección de idioma",
+    "notFound": "No encontrado"
   }
 }
