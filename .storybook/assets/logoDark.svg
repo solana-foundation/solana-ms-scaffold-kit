@@ -1,0 +1,19 @@
+<svg viewBox="0 0 230 60" color="#fff" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="solanaGradient" x1="0" y1="0" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9945FF" />
+      <stop offset="50%" stop-color="#14F195" />
+      <stop offset="100%" stop-color="#00FFA3" />
+    </linearGradient>
+  </defs>
+  <path d="M20 15H60L50 25H10L20 15Z" fill="url(#solanaGradient)" />
+  <path d="M20 35H60L50 45H10L20 35Z" fill="url(#solanaGradient)" />
+  <text
+    x="70"
+    y="35"
+    fill="currentColor"
+    style="font-family: 'Geist Sans', sans-serif; font-size: 20px; font-weight: bold;"
+  >
+    Solana MS Kit
+  </text>
+</svg>

@@ -39,8 +39,13 @@ export const LanguageSelect = ({ languages, locale, onChange }: LanguageSelectPr
   )
 
   return (
-    <Select name="language-select" value={locale} onValueChange={handleChange}>
-      <SelectTrigger>
+    <Select
+      name="language-select"
+      value={locale}
+      onValueChange={handleChange}
+      aria-label="language-select"
+    >
+      <SelectTrigger aria-label="language-select-trigger">
         <SelectValue placeholder={t('language_selection')} />
       </SelectTrigger>
       <SelectContent>

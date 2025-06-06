@@ -1,8 +1,10 @@
 import { withThemeByClassName } from '@storybook/addon-themes'
-import type { Preview } from '@storybook/react'
+import type { Preview } from '@storybook/nextjs-vite'
 import { initialize, mswLoader } from 'msw-storybook-addon'
 
 import '../src/styles/globals.css'
+
+import { themes } from '@storybook/theming'
 
 // Initialize MSW
 initialize({
@@ -30,6 +32,7 @@ if (typeof window !== 'undefined') {
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
+    layout: 'centered',
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -49,11 +52,20 @@ const preview: Preview = {
         },
       ],
     },
+    docs: {
+      theme: themes.dark,
+    },
     nextjs: {
       appDirectory: true,
     },
     msw: {
       handlers: [],
+    },
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo',
     },
   },
   tags: ['autodocs'],

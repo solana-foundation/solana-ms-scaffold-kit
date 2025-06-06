@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { LANGUAGES } from '@/constants/language'
 import { LanguageContext } from '@/contexts/LanguageContext'
 import { LanguageContextProvider } from './LanguageContextProvider'

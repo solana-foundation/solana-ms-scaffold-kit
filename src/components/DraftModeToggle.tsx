@@ -46,6 +46,7 @@ export function DraftModeToggle({ isEnabled }: IDraftModeToggleProps) {
           size="icon"
           variant="outline"
           onClick={hidePanel}
+          aria-label="hide"
         >
           <X className="h-4 w-4" />
         </Button>
