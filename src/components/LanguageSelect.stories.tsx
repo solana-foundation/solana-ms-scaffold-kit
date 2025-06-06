@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { NextIntlClientProvider } from 'next-intl'
 import { LANGUAGES } from '@/constants/language'
 import { LanguageSelect } from './LanguageSelect'

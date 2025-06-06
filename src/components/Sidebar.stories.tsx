@@ -1,5 +1,6 @@
 import React from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import { SidebarTrigger } from '@solana-foundation/ms-tools-ui'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { NextIntlClientProvider } from 'next-intl'
 import { DEFAULT_LANGUAGE } from '@/constants/language'
 import { LanguageContextProvider } from './LanguageContextProvider'
@@ -10,9 +11,13 @@ const messages = {
   utils: {
     language_selection: 'Select Language',
   },
+  navigation: {
+    home: 'Home',
+    label: 'Navigation',
+  },
 }
 
-const meta = {
+const meta: Meta<typeof Sidebar> = {
   title: 'Components/Sidebar',
   component: Sidebar,
   parameters: {
@@ -28,7 +33,8 @@ const meta = {
         <React.Suspense fallback={<div>Loading...</div>}>
           <NextIntlClientProvider locale="en" messages={messages}>
             <LanguageContextProvider language={DEFAULT_LANGUAGE}>
-              <SidebarWrapper>
+              <SidebarWrapper defaultOpen>
+                <SidebarTrigger role="button" aria-label="sidebar-trigger-1" />
                 <Story />
               </SidebarWrapper>
             </LanguageContextProvider>
@@ -42,4 +48,12 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof Sidebar>
 
-export const Default: Story = {}
+export const Default: Story = {
+  render: () => (
+    <>
+      <Sidebar>
+        <SidebarTrigger role="button" aria-label="sidebar-trigger-2" />
+      </Sidebar>
+    </>
+  ),
+}

@@ -49,7 +49,7 @@ export default defineConfig({
 2. **Testing Hooks**
 
    ```typescript
-   import { renderHook, act } from '@testing-library/react'
+   import { act, renderHook } from '@testing-library/react'
    import { useCounter } from './useCounter'
 
    it('increments counter', () => {
@@ -82,9 +82,9 @@ Play functions allow you to test component interactions in Storybook:
 
 ```typescript
 // Button.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react'
-import { within, userEvent } from '@storybook/testing-library'
 import { expect } from '@storybook/jest'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { userEvent, within } from '@storybook/testing-library'
 import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
@@ -123,14 +123,8 @@ export const FormSubmission: Story = {
     const canvas = within(canvasElement)
 
     // Fill form fields
-    await userEvent.type(
-      canvas.getByLabelText('Username'),
-      'testuser'
-    )
-    await userEvent.type(
-      canvas.getByLabelText('Password'),
-      'password123'
-    )
+    await userEvent.type(canvas.getByLabelText('Username'), 'testuser')
+    await userEvent.type(canvas.getByLabelText('Password'), 'password123')
 
     // Submit form
     await userEvent.click(canvas.getByRole('button', { name: /submit/i }))

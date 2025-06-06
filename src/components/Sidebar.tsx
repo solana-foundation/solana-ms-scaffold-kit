@@ -1,5 +1,6 @@
 'use client'
 
+import { ReactNode } from 'react'
 import Link from 'next/link'
 import {
   SidebarContent,
@@ -15,12 +16,12 @@ import {
 import { Home } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
-export function Sidebar() {
+export function Sidebar({ children }: { children?: ReactNode }) {
   const t = useTranslations('navigation')
 
   return (
     <UISidebar className="border-b border-[var(--border)] bg-slate-100 dark:bg-[var(--surface)]">
-      <SidebarHeader className="h-15" />
+      <SidebarHeader className="h-15">{children}</SidebarHeader>
       <SidebarContent className="overflow-hidden">
         <SidebarGroup>
           <SidebarGroupLabel>{t('label')}</SidebarGroupLabel>
