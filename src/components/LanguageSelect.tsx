@@ -8,7 +8,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@solana-foundation/ms-tools-ui'
+} from '@solana-foundation/ms-tools-ui/components/select'
 import { useTranslations } from 'next-intl'
 
 export interface Language {

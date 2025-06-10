@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { SidebarProvider } from '@solana-foundation/ms-tools-ui'
+import { SidebarProvider } from '@solana-foundation/ms-tools-ui/components/sidebar'
 
 interface SidebarWrapperProps {
   children: ReactNode

@@ -2,7 +2,8 @@
   "extends": "@solana-foundation/ms-tools-config/tsconfig.json",
   "compilerOptions": {
     "types": [
-      "node"
+      "node",
+      "@solana-foundation/ms-tools-ui"
     ],
     "target": "ES2017",
     "lib": [
