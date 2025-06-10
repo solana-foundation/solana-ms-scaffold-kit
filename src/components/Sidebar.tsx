@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   Sidebar as UISidebar,
-} from '@solana-foundation/ms-tools-ui'
+} from '@solana-foundation/ms-tools-ui/components/sidebar'
 import { Home } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
