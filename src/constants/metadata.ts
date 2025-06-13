@@ -26,7 +26,7 @@ export const DEFAULT_JSON_LD = {
     url: APP_URL,
     publisher: {
       '@type': 'Organization',
-      name: 'Your Organization Name',
+      name: env.NEXT_PUBLIC_APP_NAME,
       logo: {
         '@type': 'ImageObject',
         url: `${APP_URL}/logo.png`,
