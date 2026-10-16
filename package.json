@@ -71,7 +71,7 @@
     "lucide-react": "^0.511.0",
     "msw": "^2.8.4",
     "msw-storybook-addon": "^2.0.4",
-    "next": "15.3.2",
+    "next": "15.5.27",
     "next-intl": "^4.1.0",
     "next-router-mock": "^1.0.2",
     "next-sanity": "9",
